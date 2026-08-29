@@ -5,17 +5,8 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - "server/**/*.js"
-      - "server/eslint.config.mjs"
-      - "collector/**/*.js"
-      - "collector/eslint.config.mjs"
-      - "frontend/src/**/*.js"
-      - "frontend/src/**/*.jsx"
-      - "frontend/eslint.config.js"
-
+  push:
+    branches: [main]
 jobs:
   lint:
     runs-on: ubuntu-latest
