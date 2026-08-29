@@ -5,23 +5,8 @@
 name: Build QA GHCR Image
 
 on:
-  pull_request:
-    types: [labeled, synchronize]
-    paths-ignore:
-      - "**.md"
-      - ".gitmodules"
-      - "cloud-deployments/**/*"
-      - "images/**/*"
-      - ".vscode/**/*"
-      - "**/.env.example"
-      - ".github/ISSUE_TEMPLATE/**/*"
-      - ".devcontainer/**/*"
-      - "embed/**/*"
-      - "browser-extension/**/*"
-      - "extras/**/*"
-      - 'open-computer/**/*'
-
-
+  push:
+    branches: [main]
 concurrency:
   group: qa-build-pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
