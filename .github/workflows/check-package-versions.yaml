@@ -8,12 +8,8 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - "server/package.json"
-      - "collector/package.json"
-
+  push:
+    branches: [main]
 jobs:
   run-script:
     runs-on: ubuntu-latest
